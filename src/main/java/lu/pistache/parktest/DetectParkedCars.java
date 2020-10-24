@@ -86,7 +86,7 @@ public class DetectParkedCars extends JPanel {
         int width = 0;
 
 
-        String photo = "src/main/resources/japan.jpeg";
+        String photo = "src/main/resources/sweden.jpg";
         BufferedImage image = ImageIO.read(new FileInputStream(new File(photo)));
 
         ByteBuffer imageBytes;
@@ -96,7 +96,7 @@ public class DetectParkedCars extends JPanel {
 
         DetectLabelsRequest request = new DetectLabelsRequest()
                 .withImage(new Image().withBytes(imageBytes))
-                .withMaxLabels(30).withMinConfidence(85F);
+                .withMaxLabels(30).withMinConfidence((float) 0.10);
 
         width = image.getWidth();
         height = image.getHeight();
